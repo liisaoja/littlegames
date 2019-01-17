@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Komponentteja</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <!--
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        --> 
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/omat-tyylit.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Satunnaislukuja  
+                        <span class="badge badge-info klikkaa piilota" data-piilota="sat-luvut">-</span>
+                    </h2>
+
+                </div>
+                <div class="col-md sat-luvut">
+                    <button type="button" class="btn btn-primary" id="heitto1">Heitä noppaa</button>
+                    <p>Nopan silmäluku: <label id="noppa1">3</label></p>
+                </div>
+                <div class="col-md sat-luvut">
+                    <button type="button" class="btn btn-primary" id="heitto2">Heitä noppaa</button>
+                    <p>Nopan silmäluku: <br> <label id="noppa2"></label></p>
+                </div>
+                <div class="col-md sat-luvut">
+                    <button type="button" class="btn btn-primary" id="heitto3">Heitä noppaa</button>
+                    <p>Nopan silmäluku: <label id="noppa3">3</label></p>
+                </div>
+                <div class="col-md sat-luvut">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Min</span>
+                        </div>
+                        <input type="number" step="1" class="form-control" placeholder="minimiarvo" id="minarvo">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Max</span>
+                        </div>
+                        <input type="number" step="1" class="form-control" placeholder="maksimiarvo" id="maxarvo">
+                    </div>
+                    <button type="button" class="btn btn-warning" id="arvonta">Arvonta</button>
+                    <p>Arvotut luvut <span class="badge badge-primary luvut" id="luvut"></span></p>
+                    <p>Lukuja arvottu <span class="badge badge-primary luvut" id="lkm"></span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Kysymyksiä  
+                        <span class="badge badge-info klikkaa piilota" data-piilota="kysymys">-</span>
+                    </h2>
+                </div>
+                <div class="col-md-3 kysymys">
+                    <p>Minkä värinen on aurinko?</p>
+                    <ul class="list-group">
+                        <li class="list-group-item klikkaa vastaus">Vihreä</li>
+                        <li class="list-group-item klikkaa vastaus">Punainen</li>
+                        <li class="list-group-item klikkaa vastaus" data-vastaus="oikein">Keltainen</li>
+                        <li class="list-group-item klikkaa vastaus">Sininen</li>
+                        <li class="list-group-item klikkaa vastaus">Musta</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 kysymys">
+                    <p>Minkä värinen on ruoho?</p>
+                    <ul class="list-group">
+                        <li class="list-group-item klikkaa vastaus" data-vastaus="oikein">Vihreä</li>
+                        <li class="list-group-item klikkaa vastaus">Punainen</li>
+                        <li class="list-group-item klikkaa vastaus">Keltainen</li>
+                        <li class="list-group-item klikkaa vastaus">Sininen</li>
+                        <li class="list-group-item klikkaa vastaus">Musta</li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <p>Mikä seuraavista on jalkapallo?</p>
+                    <ul>
+                        <li class="pallot klikkaa kuva-vastaus"><img src="img/biljardipallo.png" class="img-fluid"/></li>
+                        <li class="pallot klikkaa kuva-vastaus" data-vastaus="oikein"><img src="img/jalkapallo.png" class="img-fluid"/></li>
+                        <li class="pallot klikkaa kuva-vastaus"><img src="img/rantapallo.png" class="img-fluid"/></li>
+                        <li class="pallot klikkaa kuva-vastaus"><img src="img/pallo.png" class="img-fluid"/></li>
+                    </ul>
+                    <p id="paikka"></p>
+                </div>
+            </div>
+                        <div class="row">
+                <div class="col-12">
+                    <h2>Lukuja <span class="badge badge-info klikkaa piilota" data-piilota="lukuja">-</span></h2>
+                </div>
+                <div class="col-12 col-md-10 col-xl-8 lukuja">
+                    <table>
+                        <tr>
+                            <td><label class="numero">1</label></td>
+                            <td><label class="numero">2</label></td>
+                            <td><input type="number" step="1" class="numero numero-a"></td>
+                            <td><input type="number" step="1" class="numero numero-a"></td>
+                            <td ><input type="number" step="1" class="numero numero-a"></td>
+                            <td><input type="number" step="1" class="numero numero-a"></td>
+                        </tr>
+                    </table>
+                    <button id="taulukko" class="btn btn-outline-info">Taulukon läpikäynti</button>
+                    <button id="alusta" class="btn btn-outline-info">Uudestaan</button>
+                    
+                    <table class="table">
+                        <tr>
+                            <td><label>1</label></td>
+                            <td><label>2</label></td>
+                            <td><input type="number" step="1" class="numero numero-b" ></td>
+                            <td><input type="number" step="1" class="numero numero-b"></td>
+                            <td ><input type="number" step="1" class="numero numero-b"></td>
+                            <td><input type="number" step="1" class="numero numero-b"></td>
+                        </tr>
+                    </table>   
+                    <button id="taulukko2" class="btn btn-outline-info">Taulukon läpikäynti</button>
+                    <button id="alusta2" class="btn btn-outline-info">Uudestaan</button>                    
+                </div>
+            </div>                
+            
+            <div class="row">
+                <div class="col-12">
+                    <h2>Siirtämisiä <span class="badge badge-info klikkaa piilota" data-piilota="siirtoja">-</span></h2>
+                </div>
+                
+                <div class="col-sm-2 siirtoja">
+                    <h4>Kaunein kukka</h4>
+                    <p id="kaunein"></p>
+                    <button id="peru" class="btn btn-info">Peru valinta</button>
+                </div>
+                
+                <div class="col-sm-5 siirtoja">
+                    <h4>Valitse kaunein kukka</h4>
+                    <p>
+                        <a data-toggle="collapse" href="#akileija" 
+                           aria-expanded="false" aria-controls="akileija">Lisätietoa</a>
+                    </p>
+
+                    <div class="collapse" id="akileija">
+                        <p>Akileijoille ovat ominaisia koristeelliset, toistamiseen kolmisormiset lehdet. 
+                            Kukissa on 5 värikästä verholehteä (kehälehteä) ja yhtä monta kannuksellista 
+                            terälehteä (mesilehteä). Amerikkalaisten lajien kannukset ovat pitkät ja 
+                            suorat, terälehtiä pitemmät. Euroopan ja Aasian lajit tuntee käyristä, 
+                            kehälehtiä lyhyemmistä kannuksista.</p>
+                    </div>
+
+                    <ul>
+                        <li class="kukat klikkaa"><img src="img/kuva1.png" class="img-fluid"></li>
+                        <li class="kukat klikkaa"><img src="img/kuva2.png" class="img-fluid"></li>
+                        <li class="kukat klikkaa"><img src="img/kuva3.png" class="img-fluid"></li>
+                        <li class="kukat klikkaa"><img src="img/kuva4.png" class="img-fluid"></li>
+                        <li class="kukat klikkaa"><img src="img/kuva5.png" class="img-fluid"></li>
+                        <li class="kukat klikkaa"><img src="img/kuva6.jpg" class="img-fluid"></li>
+                        <li class="kukat klikkaa"><img src="img/kuva7.png" class="img-fluid"></li>
+                        <li class="kukat klikkaa"><img src="img/kuva8.jpg" class="img-fluid"></li>                        
+                    </ul>
+                </div>                
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="js/omatkoodit.js"></script>
+    </body>
+</html>
